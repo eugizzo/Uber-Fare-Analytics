@@ -4,7 +4,7 @@
 
 **Course:** Introduction to Big Data Analytics INSY 8413  
 **Instructor:** Eric Maniraguha  
-**Student:** [Your Name]  
+**Student:** 27580 Eugene MUGIRANEZA  
 **Assignment:** Assignment I - Uber Fares Dataset Analysis using Power BI  
 **Date:** 27.07.2025
 
@@ -285,7 +285,7 @@ Day-of-Week Patterns: Weekends show % higher demand
 📍 Screenshot of  Time series chart
 
 
-📌 4. Results
+## 📌 4. Results
 4.1 Discoveries
 🧾 Fare Insights
 Dynamic pricing opportunities during rush hours
@@ -297,77 +297,60 @@ Increase driver density during [7-9 AM, 5-7 PM]
 
 Optimize dispatch around business zones
 
-4.2 Customer Patterns
+### 4.2 Customer Patterns
 Price-sensitive users: % show avoidance during peak fares
 
 Distance preference:  miles average ride
 
-4.3 Hypothesis Testing
+### 4.3 Hypothesis Testing
 Time-based Fare Differences
 
 Geo-Fare Variability: Differences significant across districts
 
 🧠 5. Conclusion
-5.1 Summary of Key Insights
+### 5.1 Summary of Key Insights
 Fare and distance highly correlated
 
 Peak demand times align with commuter schedules
 
 Urban cores dominate high-fare activity
 
-5.2 Objectives Achieved 
+### 5.2 Objectives Achieved 
 Objective	Status
 Fare Distribution Analysis	
 Temporal Pattern Identification	
 Geographic Distribution Insights	
 Predictive Recommendations	
 
-5.3 Limitations
+### 5.3 Limitations
 Single-city dataset
 
 Missing weather/event contextual data
 
 Assumed constant pricing logic
 
-📈 6. Recommendations
+## 📈 6. Recommendations
 6.1 Pricing Strategy
 Increase fares by % during 7–9 AM, 5–7 PM
 
 Introduce location-based pricing premiums
 
-6.2 Operational Improvements
+### 6.2 Operational Improvements
 Add drivers during morning/evening rush
 
 Implement predictive dispatch based on demand heatmaps
 
-6.3 Customer-Centric Strategies
+### 6.3 Customer-Centric Strategies
 Personalized pricing by user category
 
 Expand to high-demand but underserved areas
 
-6.4 Strategic Initiatives
+### 6.4 Strategic Initiatives
 Time Frame	Action
 0–3 months	Dynamic pricing rollout, allocate drivers
 3–12 months	Build real-time analytics system
 12+ months	Geographic expansion, loyalty programs
-
-📊 7. Success Metrics
-KPI	Target
-Revenue Growth	+[X]% in 12 mo
-Driver Utilization	+[Y]%
-Wait Time Reduction	−[Z]%
-Customer Retention	+[A]%
-Avg. Service Rating	[B.B]/5
-
-📎 Appendices
-Appendix A – Data Dictionary: [variable descriptions]
-
-Appendix B – Statistical Output: [tests, confidence intervals]
-
-Appendix C – Visualization Gallery:
-📍 Screenshot placeholder: Histogram, Boxplot, Time Series
-
-Appendix D – Code Documentation:
+n:
 Python preprocessing, DAX formulas
 
 
