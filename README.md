@@ -67,6 +67,7 @@ import pandas as pd
 
 path = kagglehub.dataset_download("yasserh/uber-fares-dataset")
 df = pd.read_csv(path + "/uber.csv")
+```
 2.2 Data Processing Pipeline
 📊 Understanding Phase
 Column types, nulls, duplicates, outliers, value ranges.
