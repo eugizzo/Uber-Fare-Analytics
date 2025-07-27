@@ -7,7 +7,6 @@
 **Student:** 27580 Eugene MUGIRANEZA  
 **Assignment:** Assignment I - Uber Fares Dataset Analysis using Power BI  
 **Date:** 27.07.2025
-
 ---
 
 ## 🧾 Executive Summary
