@@ -6,7 +6,7 @@
 **Instructor:** Eric Maniraguha  
 **Student:** [Your Name]  
 **Assignment:** Assignment I - Uber Fares Dataset Analysis using Power BI  
-**Date:** [Current Date]
+**Date:** 27.07.2025
 
 ---
 
@@ -15,7 +15,7 @@
 This report presents a comprehensive analysis of the Uber Fares Dataset using advanced analytics techniques and Power BI. It evaluates fare patterns, trip durations, time-based trends, and spatial distributions to deliver actionable business insights for optimizing ride-sharing operations.
 
 ### 🔍 Key Findings
-- Average fare is **$[X.XX]**, with majority rides falling in the **$[Y]-$[Z]** range.
+- Average fare , with majority rides falling in the **$[Y]-$[Z]** range.
 - Peak demand occurs during **7-9 AM and 5-7 PM**, aligning with commuting hours.
 - Fare and distance show a **strong positive correlation (r = 0.XXX)**, indicating pricing efficiency.
 
@@ -68,7 +68,8 @@ import pandas as pd
 path = kagglehub.dataset_download("yasserh/uber-fares-dataset")
 df = pd.read_csv(path + "/uber.csv")
 ```
-2.2 Data Processing Pipeline
+
+### 2.2 Data Processing Pipeline
 📊 Understanding Phase
 Column types, nulls, duplicates, outliers, value ranges.
 
@@ -76,6 +77,62 @@ Column types, nulls, duplicates, outliers, value ranges.
 Median/Mode imputation for missing values
 
 IQR method for outliers
+
+```python
+mport pandas as pd
+import numpy as np
+
+# Load the original dataset
+df = pd.read_csv(path + "uber_fares_original.csv")
+print(f"Original dataset shape: {df.shape}")
+
+# Data Cleaning Process
+df_clean = df.copy()
+
+1. Handle missing values
+print("\nHandling missing values...")
+for col in df_clean.columns:
+    missing_count = df_clean[col].isnull().sum()
+    if missing_count > 0:
+        print(f"Column '{col}': {missing_count} missing values")
+
+        # Fill missing values based on data type
+        if df_clean[col].dtype == 'object':
+            df_clean[col].fillna('Unknown', inplace=True)
+        else:
+            df_clean[col].fillna(df_clean[col].median(), inplace=True)
+
+# 2. Remove duplicates
+duplicates = df_clean.duplicated().sum()
+if duplicates > 0:
+    df_clean.drop_duplicates(inplace=True)
+    print(f"Removed {duplicates} duplicate rows")
+
+# 3. Basic outlier handling (optional)
+numeric_cols = df_clean.select_dtypes(include=[np.number]).columns
+for col in numeric_cols:
+    Q1 = df_clean[col].quantile(0.25)
+    Q3 = df_clean[col].quantile(0.75)
+    IQR = Q3 - Q1
+
+    # Remove extreme outliers (beyond 3*IQR)
+    lower_bound = Q1 - 3 * IQR
+    upper_bound = Q3 + 3 * IQR
+
+    outliers_before = len(df_clean)
+    df_clean = df_clean[(df_clean[col] >= lower_bound) & (df_clean[col] <= upper_bound)]
+    outliers_removed = outliers_before - len(df_clean)
+
+    if outliers_removed > 0:
+        print(f"Removed {outliers_removed} extreme outliers from '{col}'")
+
+print(f"\nCleaned dataset shape: {df_clean.shape}")
+
+# Save cleaned dataset
+df_clean.to_csv(path + "uber_fares_cleaned.csv", index=False)
+print(" Cleaned dataset saved as 'uber_fares_cleaned.csv'")
+```
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1553ecab-494a-4710-bde8-fdaf564306ee" />
 
 Type optimization and datetime conversion
 
